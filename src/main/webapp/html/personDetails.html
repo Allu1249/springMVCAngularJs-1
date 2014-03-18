@@ -1,0 +1,47 @@
+
+<html>
+<head>
+    <title>Person Details</title>
+    <script src="/springMVCAngularJs/js/angularJs/angular.js" type="text/javascript"></script>
+    <script src="/springMVCAngularJs/js/angularJs/app.js" type="text/javascript"></script>
+    <script src="/springMVCAngularJs/js/angularJs/controller.js" type="text/javascript"></script>
+    <script src="/springMVCAngularJs/js/angularJs/directives.js" type="text/javascript"></script>
+    <script src="/springMVCAngularJs/js/angularJs/filters.js" type="text/javascript"></script>
+    <script src="/springMVCAngularJs/js/angularJs/services.js" type="text/javascript"></script>
+</head>
+<body ng-app="angularPersonForm">
+    <div ng-controller="personFormController">
+    <form id="personForm" name="personForm" novalidate class="simple-form">
+            <div> First Name : <input type="text" ng-model="user.firstName" name="firstName" form="personForm"/></div>
+            <div> Last Name : <input type="text" ng-model="user.lastName" name="lastName" form="personForm"/></div>
+            <div> Email: <input type="text"  ng-model="user.email" name="email" form="personForm"/></div>
+            <div>Gender: <input type="checkbox" ng-model="user.gender" name="gender" value="Male"/>male &nbsp;
+                         <input type="checkbox" ng-model="user.gender" name="gender" value="Female"/>female
+            </div>
+
+        <div>Address Here<br> <button ng-click="addAddress()">Add Address</button>
+            <div ng-repeat="address in addressList">
+                <add-Address ></add-Address>
+            </div>
+
+        </div>
+
+        <!--<select ng-model="spaceTypeCode" >-->
+          <!--<option ng-repeat="(key,value) in spaceType" value="{{key}}">{{value}}</option>-->
+        <!--</select>-->
+
+        <select ng-model="spaceTypeCode"  ng-options="k as v for (k,v) in spaceType">
+
+        </select>
+
+
+        <div>{{spaceTypeCode}}   Will this worK??? {{testValue}}</div>
+        <button ng-click="reset()">RESET</button>
+        <button ng-click="update(user)">SAVE</button>
+    </form>
+        <pre>form = {{user | json}}</pre>
+        <pre>addressList = {{addressList | json}}</pre>
+        <pre>spaceType = {{spaceType | json}}</pre>
+    </div>
+</body>
+</html>
