@@ -29,7 +29,6 @@ angular.module('angularPersonForm',['myDirectives','myFilters'])
                   $scope.addressList.push(angular.copy(address));
          };
 
-
         $scope.reset();
 });
 
