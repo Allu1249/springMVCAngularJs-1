@@ -15,8 +15,6 @@ angular.module('angularPersonForm',['myDirectives','myFilters'])
          .error(function(data){
          });
 
-
-
         $scope.testValue= spaceTypeFilter.testValue;
 
         $scope.update = function(user) {
@@ -28,10 +26,10 @@ angular.module('angularPersonForm',['myDirectives','myFilters'])
         };
 
         $scope.addAddress= function() {
-
                   $scope.addressList.push(angular.copy(address));
          };
 
 
         $scope.reset();
 });
+
